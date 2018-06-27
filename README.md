@@ -74,15 +74,3 @@ def train_neural_network(x):
         print('Accuracy:',accuracy.eval({x:mnist.test.images, y:mnist.test.labels}))
 
 train_neural_network(x)
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
