@@ -1,21 +1,12 @@
 # Mnist_Data_Set
-'''
-Feed Forward:
-input > weight > hidden layer 1 (activation function) > weights > hidden layer 2
-(activation function) > weights > output layer  
 
-Backpropagation(going back and changing weights):
-compare output to intended output > cost/loss function >
-optimization function > minimize cost (AdamOptimizer...SGD, AdaGrad, etc.)
-
-feed forward + backpropagation = epoch (1 iteration)
-'''
 import tensorflow as tf
 
 from tensorflow.examples.tutorials.mnist import input_data
-#importing the handwritten 0-9 data samples
+
+
 mnist = input_data.read_data_sets("/tmp/data/", one_hot=True)#one_hot means that
-#we will be taking only one output from the many outputs of our network
+
 
 n_nodes_hl1 = 500
 n_nodes_hl2 = 500
@@ -24,10 +15,9 @@ n_nodes_hl3 = 500
 n_classes = 10#how many classes
 batch_size = 100#how big the batches of data are that we run at a time
 
-#making a matrix (height X width)
+
 x = tf.placeholder('float', [None, 784])#our x is the data we are feeding in.
-#we are importing 28x28 pixel pictures but we can read them one line at a time,
-#hence the height being None/irrelevent and width being 784
+
 y = tf.placeholder('float')#y is the label for our data, what we want the machine to find
 
 def neural_network_model(data):
